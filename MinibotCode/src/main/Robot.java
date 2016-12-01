@@ -1,6 +1,9 @@
 package main;
 
 import arduinoControl.Joystick;
+import arduinoControl.Victor;
+import commands.Command;
+import commands.CommandUtils;
 
 public class Robot {
 
@@ -15,6 +18,11 @@ public class Robot {
 	}
 
 	public void teleopInit() {
+		Victor v = new Victor(1);
+		v.set(.5);
+		Victor z = new Victor(2);
+		z.set(.5);
+		
 
 	}
 
@@ -23,6 +31,7 @@ public class Robot {
 	 */
 	public void teleopPeriodic() {
 		joy.getButton(0);
+		
 	}
 
 	public static void main(String[] args) {
