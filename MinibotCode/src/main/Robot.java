@@ -1,55 +1,37 @@
 package main;
 
-import arduinoControl.*;
+import arduinoControl.Joystick;
 
-public class Robot{	
+public class Robot {
 
 	/**
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
+	Joystick joy;
+
 	public void robotInit() {
-	
-	}
-	public void autonomousInit() {
-		
+		joy = new Joystick(0);
 	}
 
-	/**
-	 * This function is called periodically during autonomous
-	 */
-	public void autonomousPeriodic() {
-		
+	public void teleopInit() {
+
 	}
 
-	public void teleopInit(){
-		
-	}
 	/**
 	 * This function is called periodically during operator control
 	 */
 	public void teleopPeriodic() {
-		
+		joy.getButton(0);
 	}
 
-
-	public static void main(String[] args){
+	public static void main(String[] args) {
+		Joystick.printControllers();
 		Robot r = new Robot();
 		r.robotInit();
-		boolean auton = false;
-		if(auton){
-			r.autonomousInit();
-			while(true){
-				r.autonomousPeriodic();
-			}
-		}
-		else{
-			r.teleopInit();
-			while(true){
-				r.teleopPeriodic();
-			}
+		r.teleopInit();
+		while (true) {
+			r.teleopPeriodic();
 		}
 	}
 }
-
-
