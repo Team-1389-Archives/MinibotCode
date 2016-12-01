@@ -1,8 +1,11 @@
 package main;
 
 import arduinoControl.Joystick;
+import arduinoControl.Victor;
 
 public class Robot {
+	
+	 Victor v = new Victor(3);
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -15,6 +18,7 @@ public class Robot {
 	}
 
 	public void teleopInit() {
+		joy.getButton(0);
 
 	}
 
