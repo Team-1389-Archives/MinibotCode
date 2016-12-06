@@ -18,7 +18,7 @@ public class ControlMap {
 		protected static final int btn_INTAKE_MANUAL_OVERRIDE=9;
 			
 		//Arm
-		protected static final int ax_ARM_AXIS=0;
+		protected static final int btn_ARM=0;
 			
 		
 

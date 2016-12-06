@@ -1,5 +1,7 @@
 package control;
 
+import arduinoControl.Joystick;
+
 
 public class ControlBoard extends ControlMap{
 	private static ControlBoard bInstance = new ControlBoard();
@@ -8,25 +10,25 @@ public class ControlBoard extends ControlMap{
 		return bInstance;
 	}
 	
-	private final JoystickController driveController;
-	private final JoystickController manipController;
+	private final Joystick driveController;
+	private final Joystick manipController;
 	
 	private ControlBoard(){//setting control sticks for drive and manip 
-		driveController = new JoystickController(DRIVE_CONTROLLER);
-		manipController = new JoystickController(MANIP_CONTROLLER);
+		driveController = new Joystick(DRIVE_CONTROLLER);
+		manipController = new Joystick(MANIP_CONTROLLER);
 	}
 	//DRIVER CONTROLS
 	
 	//axis for forward speed of drivetrain
 	
-	public PercentIn getThrottle(){
-		return driveController.getAxis(ax_THROTTLE_AXIS).applyDeadband(0.2);
+	public double getThrottle(){
+		return driveController.getAxis(ax_THROTTLE_AXIS);
 		}
 	
 	//axis for controlling turning of drivetrain
 	
-	public PercentIn getWheel(){
-		return driveController.getAxis(ax_WHEEL_AXIS).applyDeadband(0.2);
+	public double getWheel(){
+		return driveController.getAxis(ax_WHEEL_AXIS);
 		}
 	
 	//BUTTON CONTROLS
@@ -61,7 +63,7 @@ public class ControlBoard extends ControlMap{
 	
 	/*axis for moving arm
 	 */
-	public PercentIn getArm(){
-		return driveController.getAxis(ax_ARM_AXIS);
+	public double getArm(){
+		return manipController.getButton(btn_ARM);
 	}
 }

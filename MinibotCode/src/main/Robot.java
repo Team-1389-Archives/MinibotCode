@@ -10,13 +10,10 @@ public class Robot {
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
-	Joystick joy;
-	Victor v;
 	
 
 	public void robotInit() {
-		joy = new Joystick(0);
-		Victor
+	
 	}
 
 	public void teleopInit() {
