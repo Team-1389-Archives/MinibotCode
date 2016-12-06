@@ -26,6 +26,7 @@ public class ControlBoard extends ControlMap{
 	
 	public double getThrottle(){
 		return driveController.getAxis(ax_THROTTLE_AXIS).applyDeadband(0.2);
+		
 		}
 	
 	//axis for controlling turning of drivetrain
@@ -37,22 +38,22 @@ public class ControlBoard extends ControlMap{
 	//BUTTON CONTROLS
 	/*button when pressed, turn right 90 degrees
 	 */
-	public LatchedDigitalInput getCEightTurn(){
+	public LatchedDigitalInput get90(){
 		return (LatchedDigitalInput) manipController.getButton(btn_90_DEGREE);
 	}
 	/*button when pressed, turn right 45 degrees
 	 */
-	public LatchedDigitalInput getCFourthTurn(){
+	public LatchedDigitalInput getC45(){
 		return (LatchedDigitalInput) manipController.getButton(btn_45_DEGREE); 
 	}
 	/*button when pressed, turn right 180 degrees
 	 */
-	public LatchedDigitalInput getCCEightTurn(){
+	public LatchedDigitalInput get180(){
 		return (LatchedDigitalInput) manipController.getButton(btn_180_DEGREE);
 	}
 	/*button when pressed, turn right 360 degrees
 	 */
-	public LatchedDigitalInput getCCFourthTurn(){
+	public LatchedDigitalInput get360(){
 		return (LatchedDigitalInput) manipController.getButton(btn_360_DEGREE);
 	}
 	/*button when pressed, flywheels spin to output ball 
