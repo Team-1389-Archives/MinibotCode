@@ -10,11 +10,17 @@ public class ControlMap {
 		protected static final int btn_45_DEGREE=2;//b
 		protected static final int btn_180_DEGREE=3;//c
 		protected static final int btn_360_DEGREE=4;//d
+		//status
+		protected static final int ax_ARM_AXIS=1;
 		
-		//Button Controls
-		protected static final int btn_UP=1;
-		protected static final int btn_DOWN=2;
-		protected static final int btn_LEFT=3;
-		protected static final int btn_RIGHT=4;
+		//Button Controls Intake System 
+		protected static final int angle_TRAP_DOOR=2;
+		protected static final int ax_INTAKE_AXIS=3;
+		protected static final int incline_plane=4;
 
+		//controls
+		protected static final int DRIVE_CONTROLLER=1;
+		protected static final int MANIP_CONTROLLER=2;
+		
+	
 }
