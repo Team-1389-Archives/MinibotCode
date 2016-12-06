@@ -29,14 +29,24 @@ public class ControlBoard extends ControlMap{
 		return driveController.getAxis(ax_WHEEL_AXIS).applyDeadband(0.2);
 		}
 	
-	//hold a button to switch between curvature to regular tank turning
-	
-	public RawDigitalInput getQuickTurn(){
-		return (RawDigitalInput) driveController.getButton(btn_QUICK_TURN, InputStyle.RAW);
+	//BUTTON CONTROLS
+	/*button when pressed, turn right 45 degrees
+	 */
+	public LatchedDigitalInput getCEightTurn(){
+		return (LatchedDigitalInput) manipController.getButton(btn_CLOCKWISE_EIGHTH_TURN);
+	}
+	/*button when pressed, turn right 90 degrees
+	 */
+	public LatchedDigitalInput getCFourthTurn(){
+		return (LatchedDigitalInput) manipController.getButton(btn_CLOCKWISE_FOURTH_TURN); 
 	}
 	
-	//BUTTON CONTROLS
-	
+	public LatchedDigitalInput getCCEightTurn(){
+		return (LatchedDigitalInput) manipController.getButton(btn_COUNTERCLOCKWISE_EIGHTH_TURN);
+	}
+	public LatchedDigitalInput getCCFourthTurn(){
+		return (LatchedDigitalInput) manipController.getButton(btn_COUNTERCLOCKWISE_FOURTH_TURN);
+	}
 	/*button when pressed, flywheels spin to output ball 
 	 */
 	public LatchedDigitalInput getOutput(){
@@ -47,5 +57,11 @@ public class ControlBoard extends ControlMap{
 	 */
 	public LatchedDigitalInput getInput(){
 		return (LatchedDigitalInput) manipController.getButton(ax_INTAKE_AXIS);//check the arguments for the method
+	}
+	
+	/*axis for moving arm
+	 */
+	public PercentIn getArm(){
+		return driveController.getAxis(ax_ARM_AXIS);
 	}
 }
