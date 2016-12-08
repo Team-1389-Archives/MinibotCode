@@ -27,6 +27,8 @@ public class ControlBoard extends ControlMap{
 	public double getThrottle(){
 		return driveController.getAxis(ax_THROTTLE_AXIS).applyDeadband(0.2);
 		
+	
+		
 		}
 	
 	//axis for controlling turning of drivetrain
@@ -70,9 +72,9 @@ public class ControlBoard extends ControlMap{
 	//trap door
 	
 	public double getTrapDoor(){
-		return driveController.getAxis(angle_TRAP_DOOR);
+		return driveController.getAxis(btn_ANGLE_TRAP_DOOR);
 	}
 	public double getInclinePlane(){
-		return driveController.getAxis(incline_plane);
+		return driveController.getAxis(btn_ANGLE_PLANE);
 	}
 }
