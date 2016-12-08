@@ -16,7 +16,7 @@ public class ControlMap {
 		//Button Controls Intake System 
 		protected static final int btn_ANGLE_TRAP_DOOR=2;
 		protected static final int ax_INTAKE_AXIS=3;
-		protected static final int btn_ANGLE_plane=4;
+		protected static final int btn_ANGLE_PLANE=4;
 
 		//controls
 		protected static final int DRIVE_CONTROLLER=1;
