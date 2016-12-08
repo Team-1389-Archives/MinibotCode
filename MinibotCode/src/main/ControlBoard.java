@@ -15,8 +15,8 @@ public class ControlBoard extends ControlMap{
 	
 	private ControlBoard(){//setting control sticks for drive and manip 
 		
-	 driveController = new Joystick(DRIVE_CONTROLLER);
-		manipController = new Joystick(MANIP_CONTROLLER);
+	driveController = new Joystick(DRIVE_CONTROLLER);
+	manipController = new Joystick(MANIP_CONTROLLER);
 		
 		
 	}
@@ -26,16 +26,17 @@ public class ControlBoard extends ControlMap{
 	
 	public double getThrottle(){
 		return driveController.getAxis(ax_THROTTLE_AXIS).applyDeadband(0.2);
-		
-	
-		
-		}
+	}
 	
 	//axis for controlling turning of drivetrain
 	
 	public double getWheel(){
 		return driveController.getAxis(ax_WHEEL_AXIS).applyDeadband(0.2);
-		}
+	}
+	
+	public double getIntake(){
+		return driveController.getAxis(ax_INTAKE_AXIS).applyDeadband(0.2);
+	}
 	
 	//BUTTON CONTROLS
 	/*button when pressed, turn right 90 degrees
@@ -60,8 +61,6 @@ public class ControlBoard extends ControlMap{
 	}
 	/*button when pressed, flywheels spin to output ball 
 	 */
-
-	
 	
 	/*axis for moving arm
 	 */
@@ -70,7 +69,6 @@ public class ControlBoard extends ControlMap{
 		return driveController.getAxis(ax_ARM_AXIS);
 	}
 	//trap door
-	
 	public double getTrapDoor(){
 		return driveController.getAxis(btn_ANGLE_TRAP_DOOR);
 	}
